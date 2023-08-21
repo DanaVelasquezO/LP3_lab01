@@ -6,7 +6,6 @@ public class Principal {
         boolean fl = false;
         vida = 0;
         Scanner sc = new Scanner(System.in);
-
         do {
             vida++;
             System.out.print("Vida:" + vida + "\t¿Cuál es el número secreto? ");
@@ -15,9 +14,16 @@ public class Principal {
                 fl = true;
         } while (vida < 3 && !fl);
 
-        if (fl == true)
-            System.out.println("¡Adivinaste!");
-        else
-            System.out.println("¡Ups, perdiste...");
+        if (fl) {
+            System.out.println("¡Adivinaste! ¡Eres un ganador!");
+            mostrarPremio();
+        } else {
+            System.out.println("¡Ups, perdiste... Inténtalo la próxima vez!");
+        }
+    }
+
+    public static void mostrarPremio() {
+        System.out.println("¡Felicidades! Has ganado un premio.");
+        System.out.println("Tu premio es una tarjeta de regalo de $50.");
     }
 }
